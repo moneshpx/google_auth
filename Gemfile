@@ -20,7 +20,6 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-
 gem "devise"
 gem "omniauth"
 gem "omniauth-google-oauth2"
