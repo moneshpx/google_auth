@@ -54,7 +54,6 @@ class PostsController < ApplicationController
     user = post.user
     graph = Koala::Facebook::API.new(user.access_token)
     g =  graph.get_connections("me", "friends")
-    byebug
     graph.put_connections('me', 'feed', message: post.title, description: post.descriptions)
   end
 end
