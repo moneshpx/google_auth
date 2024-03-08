@@ -1,11 +1,27 @@
-<h1>Posts</h1>
+<%# <h1>Posts</h1>
 
 <ul>
   <% @posts.each do |post| %>
-    <li>
-        <%= post.title %>
-    </li>
-  <% end %>
-</ul>
+    <%# <li> %>
+        <%#= post.title %>
+    <%# </li> %>
+  <%# end %>
+<%# </ul>  %>
 
-<%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
+<h1>Home</h1>
+<hr>
+<% if current_user %>
+  <h2><%= current_user.email %></h2>
+  <% if current_user.avatar_url.present? %>
+    <%= image_tag(current_user.avatar_url)%>
+  <% else %>
+      <%= image_tag("users-vector-icon-png.jpg") %>
+  <% end %>
+  <%= button_to "Logout", destroy_user_session_path, data: {turbo: false}, method: :delete%>
+<%else%>
+  <%= link_to "Login", new_user_session_path %><br><br>
+  <%= link_to "Create Account",new_user_registration_path %>
+<%end%>
+
+
+<%= link_to "New Post", new_user_post_path(current_user.id), class: "btn btn-primary" %>

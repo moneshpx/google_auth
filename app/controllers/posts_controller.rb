@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include Rails.application.routes.url_helpers
   before_action :authenticate_user!
   def index
     @posts = Post.all
@@ -13,13 +14,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to @post
+      # Post to Facebook
+      post_to_facebook(@post)
+      redirect_to @post, notice: 'Post was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
+
 
   def edit
     @post = Post.find(params[:id])
@@ -41,7 +45,16 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
-    params.require(:post).permit(:title, :description)
+    params.require(:post).permit(:title, :descriptions)
+  end
+
+  def post_to_facebook(post)
+    user = post.user
+    graph = Koala::Facebook::API.new(user.access_token)
+    g =  graph.get_connections("me", "friends")
+    byebug
+    graph.put_connections('me', 'feed', message: post.title, description: post.descriptions)
   end
 end
