@@ -20,6 +20,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_omniauth_callback('Instagram')
   end
 
+  def linkedin
+    handle_omniauth_callback('Linkedin')
+  end
+
+
   private
 
   def handle_omniauth_callback(provider)
