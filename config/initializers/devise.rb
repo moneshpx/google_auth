@@ -28,6 +28,9 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, Rails.application.credentials.dig(:google_oauth_client_id),Rails.application.credentials.dig(:google_oauth_client_secret)
   config.omniauth :facebook, Rails.application.credentials.dig(:facebook_id),Rails.application.credentials.dig(:facebook_secret), token_params: { parse: :json }
   config.omniauth :instagram, Rails.application.credentials.dig(:instagram_id),Rails.application.credentials.dig(:instagram_secret)
+  config.omniauth :twitter, Rails.application.credentials.dig(:twitter_key),Rails.application.credentials.dig(:twitter_secret)
+  
+
   # provider :instagram, 'YOUR_CLIENT_ID', 'YOUR_CLIENT_SECRET'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

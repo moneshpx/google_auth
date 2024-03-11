@@ -20,10 +20,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_omniauth_callback('Instagram')
   end
 
+  def twitter
+    handle_omniauth_callback('Twitter')
+  end
+
   private
 
   def handle_omniauth_callback(provider)
-    byebug
     user = User.from_omniauth(auth)
     if user.present?
       sign_out_all_scopes
