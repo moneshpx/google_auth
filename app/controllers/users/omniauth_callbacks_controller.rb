@@ -24,6 +24,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_omniauth_callback('Twitter')
   end
 
+  def linkedin
+    handle_omniauth_callback('Linkedin')
+  end
+
   private
 
   def handle_omniauth_callback(provider)

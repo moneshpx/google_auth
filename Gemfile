@@ -26,6 +26,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem "omniauth-linkedin-oauth2"
 
 gem 'bootstrap'
 gem 'sassc-rails'
