@@ -30,6 +30,7 @@ gem 'omniauth-twitter'
 gem 'bootstrap'
 gem 'sassc-rails'
 
+
 gem 'koala'
 gem 'byebug'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
