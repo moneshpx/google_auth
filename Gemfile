@@ -25,6 +25,14 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem 'omniauth-facebook'
+<<<<<<< Updated upstream
+=======
+
+gem 'bootstrap'
+gem 'sassc-rails'
+
+
+>>>>>>> Stashed changes
 gem 'koala'
 gem 'byebug'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
