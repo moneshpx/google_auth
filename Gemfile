@@ -19,12 +19,13 @@ gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
+gem 'omniauth-instagram'
 gem "devise"
 gem "omniauth"
 gem "omniauth-google-oauth2"
-gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
+
 gem 'koala'
 gem 'byebug'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
